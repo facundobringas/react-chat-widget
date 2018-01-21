@@ -1,20 +1,20 @@
 import store from '../store';
 import * as actions from './index';
 
-export function addUserMessage(text) {
-  store.dispatch(actions.addUserMessage(text));
+export function addUserMessage(text, timestamp) {
+  store.dispatch(actions.addUserMessage(text, timestamp));
 }
 
-export function addResponseMessage(text) {
-  store.dispatch(actions.addResponseMessage(text));
+export function addResponseMessage(text, timestamp) {
+  store.dispatch(actions.addResponseMessage(text, timestamp));
 }
 
-export function addLinkSnippet(link) {
-  store.dispatch(actions.addLinkSnippet(link));
+export function addLinkSnippet(link, timestamp) {
+  store.dispatch(actions.addLinkSnippet(link, timestamp));
 }
 
-export function renderCustomComponent(component, props, showAvatar = false) {
-  store.dispatch(actions.renderCustomComponent(component, props, showAvatar));
+export function renderCustomComponent(component, props, showAvatar = false, timestamp) {
+  store.dispatch(actions.renderCustomComponent(component, props, showAvatar, timestamp));
 }
 
 export function toggleWidget() {

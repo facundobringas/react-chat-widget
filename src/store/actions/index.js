@@ -12,33 +12,37 @@ export function toggleInputDisabled() {
   };
 }
 
-export function addUserMessage(text) {
+export function addUserMessage(text, timestamp) {
   return {
     type: actions.ADD_NEW_USER_MESSAGE,
-    text
+    text,
+    timestamp
   };
 }
 
-export function addResponseMessage(text) {
+export function addResponseMessage(text, timestamp) {
   return {
     type: actions.ADD_NEW_RESPONSE_MESSAGE,
-    text
+    text,
+    timestamp
   };
 }
 
-export function addLinkSnippet(link) {
+export function addLinkSnippet(link, timestamp) {
   return {
     type: actions.ADD_NEW_LINK_SNIPPET,
-    link
+    link,
+    timestamp
   };
 }
 
-export function renderCustomComponent(component, props, showAvatar) {
+export function renderCustomComponent(component, props, showAvatar, timestamp) {
   return {
     type: actions.ADD_COMPONENT_MESSAGE,
     component,
     props,
-    showAvatar
+    showAvatar,
+    timestamp
   };
 }
 

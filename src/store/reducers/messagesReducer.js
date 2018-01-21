@@ -13,16 +13,16 @@ const initialState = List([]);
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.ADD_NEW_USER_MESSAGE: {
-      return state.push(createNewMessage(action.text, MESSAGE_SENDER.CLIENT));
+      return state.push(createNewMessage(action.text, MESSAGE_SENDER.CLIENT, action.timestamp));
     }
     case actionTypes.ADD_NEW_RESPONSE_MESSAGE: {
-      return state.push(createNewMessage(action.text, MESSAGE_SENDER.RESPONSE));
+      return state.push(createNewMessage(action.text, MESSAGE_SENDER.RESPONSE, action.timestamp));
     }
     case actionTypes.ADD_NEW_LINK_SNIPPET: {
-      return state.push(createLinkSnippet(action.link, MESSAGE_SENDER.RESPONSE));
+      return state.push(createLinkSnippet(action.link, MESSAGE_SENDER.RESPONSE, action.timestamp));
     }
     case actionTypes.ADD_COMPONENT_MESSAGE: {
-      return state.push(createComponentMessage(action.component, action.props, action.showAvatar));
+      return state.push(createComponentMessage(action.component, action.props, action.showAvatar, action.timestamp));
     }
     case actionTypes.DROP_MESSAGES: {
       return List([]);
